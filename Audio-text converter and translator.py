@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[58]:
-
-
 #Speech-text
 import speech_recognition as sr
 from deep_translator import GoogleTranslator
@@ -23,14 +17,9 @@ with mic as source:
         print(f"Recognized text (translated language):")
         print(text_lang)
 
-
-# In[56]:
-
-
 #Text-speech
 from win32com.client import constants, Dispatch
 Msg = "Ola, como estas!"
 speaker = Dispatch("SAPI.SpVoice")
 speaker.Speak(Msg)
 del speaker
-
