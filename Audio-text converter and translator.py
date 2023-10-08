@@ -19,7 +19,10 @@ with mic as source:
 
 #Text-speech
 from win32com.client import constants, Dispatch
+from deep_translator import GoogleTranslator
 Msg = "Ola, como estas!"
 speaker = Dispatch("SAPI.SpVoice")
 speaker.Speak(Msg)
+text_lang = GoogleTranslator(source='auto', target='de').translate(Msg)
+speaker.Speak(text_lang)
 del speaker
